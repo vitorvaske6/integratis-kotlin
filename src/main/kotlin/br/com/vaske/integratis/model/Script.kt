@@ -1,9 +1,16 @@
 package br.com.vaske.integratis.model
 
+import io.swagger.v3.oas.annotations.media.Schema
 import java.time.LocalDateTime
 
+@Schema(description = "Script model")
 data class Script(
-    val id: Long,
+    @field:Schema(
+        description = "Automatically generated ID",
+        example = "1",
+        type = "long",
+    )
+    var id: Long? = null,
     val name: String,
     val description: String,
     val cron: String,
